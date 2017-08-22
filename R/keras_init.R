@@ -18,7 +18,12 @@ keras_available <- function(silent = FALSE){
     msg <- collapse(msg, "python not available")
   else if(!reticulate::py_numpy_available())
     msg <- collapse(msg, "numpy  not available")
-  else if(!reticulate::py_module_available("keras"))
+
+
+  # need to load numpy for this to work
+  temp <- import("numpy", convert = FALSE)
+
+  if(!reticulate::py_module_available("keras"))
     msg <- collapse(msg, "keras not available")
 
   if(msg != ""){
