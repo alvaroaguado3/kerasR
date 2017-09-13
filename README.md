@@ -28,7 +28,7 @@ install.packages("kerasR")
 ```
 Or the development version from GitHub:
 ```{r}
-devtools::install_packages("statsmaths/kerasR")
+devtools::install_github("statsmaths/kerasR")
 ```
 You will also have to install the Python module **keras** and
 either the module **tensorflow** or **Theano**. The best resource
